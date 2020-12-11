@@ -45,7 +45,7 @@ public final class WifiService extends SystemService {
         } else if (phase == SystemService.PHASE_BOOT_COMPLETED) {
             mImpl.handleBootCompleted();
             // start the hotspot on boot!
-            mImpl.startSoftAp();
+            mImpl.startSoftAp(null);
         }
     }
 
