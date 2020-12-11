@@ -44,6 +44,8 @@ public final class WifiService extends SystemService {
             mImpl.checkAndStartWifi();
         } else if (phase == SystemService.PHASE_BOOT_COMPLETED) {
             mImpl.handleBootCompleted();
+            // start the hotspot on boot!
+            mImpl.startTetheredHotspot();
         }
     }
 
