@@ -251,6 +251,8 @@ public class WifiController extends StateMachine {
                 case CMD_SCAN_ALWAYS_MODE_CHANGED:
                 case CMD_WIFI_TOGGLED:
                 case CMD_AP_START_FAILURE:
+                    log("AP_START_FAILED, YO");
+                    break;
                 case CMD_SCANNING_STOPPED:
                 case CMD_STA_STOPPED:
                 case CMD_STA_START_FAILURE:
@@ -275,8 +277,10 @@ public class WifiController extends StateMachine {
                     if (msg.arg1 == 1) {
                         SoftApModeConfiguration config = (SoftApModeConfiguration) msg.obj;
                         mActiveModeWarden.enterSoftAPMode((SoftApModeConfiguration) msg.obj);
+                        log("SHOULD HAVE ENTERED SOFTAP MODE: TETHER");
                     } else {
                         mActiveModeWarden.stopSoftAPMode(msg.arg2);
+                        log("SHOULD HAVE ENTERED SOFTAP MODE BUT HIT ELSE: TETHER");
                     }
                     break;
                 case CMD_AIRPLANE_TOGGLED:
