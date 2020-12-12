@@ -44,8 +44,9 @@ public final class WifiService extends SystemService {
             mImpl.checkAndStartWifi();
         } else if (phase == SystemService.PHASE_BOOT_COMPLETED) {
             mImpl.handleBootCompleted();
-            boolean worked = mImpl.startSoftAp(null);
-            Log.d(TAG, "Tethering Start Service Returned" + worked);
+            // this is just not working unfortunately...
+            //boolean worked = mImpl.startSoftAp(null);
+            //Log.d(TAG, "Tethering Start Service Returned" + worked);
         }
     }
 
